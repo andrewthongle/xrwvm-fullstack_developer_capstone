@@ -1,0 +1,290 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css" />
+    <style>
+      .hero {
+        background: linear-gradient(90deg, #f8f9fa, #eef2f6);
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+      }
+      .map-wrapper {
+        height: 250px;
+        min-height: 180px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .contact-card {
+        border: 1px solid #e6e9ee;
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      .muted {
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <div>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: darkturquoise; height: 1in"
+    >
+      <div class="container-fluid">
+        <h2 style="padding-right: 5%">Dealerships</h2>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                style="font-size: larger"
+                aria-current="page"
+                href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger" href="/about"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                style="font-size: larger"
+                href="/contact"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="h3 mb-0">Riverview Motors</h1>
+          <small class="muted"
+            >Family-owned since 1998 • Quality cars, honest deals</small
+          >
+        </div>
+        <div class="text-end">
+          <div class="fw-semibold">Call Sales</div>
+          <div class="h5 mb-0">(555) 912-4830</div>
+          <div class="muted">Open Mon–Sat 9am–7pm</div>
+        </div>
+      </header>
+
+      <section class="hero mb-4">
+        <div class="row g-3">
+          <div class="col-md-8">
+            <h2 class="h5 mb-1">Contact our Sales & Support Teams</h2>
+            <p class="mb-0 muted">
+              Questions about inventory, financing, or service? Send us a
+              message and we'll get back within one business day.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end align-self-center">
+            <a
+              href="mailto:info@riverview-motors.example"
+              class="btn btn-outline-primary btn-sm"
+              >Email: info@riverview-motors.example</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="contact-card bg-white">
+            <h3 class="h6 mb-3">Send us a message</h3>
+            <form id="contactForm" novalidate>
+              <div class="row g-2">
+                <div class="col-sm-6">
+                  <label class="form-label small">Full name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Jane Doe"
+                    required
+                  />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label small">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="jane@example.com"
+                    required
+                  />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label small">Phone</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="(555) 555-0123"
+                  />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label small">Preferred contact</label>
+                  <select class="form-select" id="contactMethod">
+                    <option>Email</option>
+                    <option>Phone</option>
+                    <option>Text/SMS</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small">Interested vehicle</label>
+                  <select class="form-select" id="vehicle">
+                    <option>2024 River GT - Sedan</option>
+                    <option>2023 Harbor LX - Crossover</option>
+                    <option>2022 Summit EV - Electric SUV</option>
+                    <option>Pre-owned (showroom specials)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    placeholder="Tell us about what you're looking for, trade-in details, or preferred financing options."
+                  ></textarea>
+                </div>
+                <div
+                  class="col-12 d-flex justify-content-between align-items-center mt-2"
+                >
+                  <small class="muted"
+                    >By contacting you agree to our privacy policy.</small
+                  >
+                  <button type="submit" class="btn btn-primary">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div
+              id="alert"
+              class="alert alert-success mt-3 d-none"
+              role="alert"
+            >
+              Thank you — your message has been received. A Riverview Motors
+              representative will contact you shortly.
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-lg-5">
+          <div class="mb-3 contact-card bg-white">
+            <h4 class="h6 mb-2">Dealership location</h4>
+            <p class="mb-1 fw-semibold">Riverview Motors</p>
+            <p class="mb-1 muted">
+              1234 Bayside Drive, Suite 100<br />Riverside, CA 94107
+            </p>
+            <p class="mb-1"><strong>Phone:</strong> (555) 912-4830</p>
+            <p class="mb-1">
+              <strong>Email:</strong>
+              <a href="mailto:info@riverview-motors.example"
+                >info@riverview-motors.example</a
+              >
+            </p>
+            <div class="map-wrapper mb-2">
+              <iframe
+                src="https://www.google.com/maps?q=37.7749,-122.4194&z=14&output=embed"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            <h5 class="h6 mt-2">Hours</h5>
+            <ul class="list-unstyled mb-0">
+              <li>Mon–Fri: 9:00 AM — 7:00 PM</li>
+              <li>Saturday: 9:00 AM — 6:00 PM</li>
+              <li>Sunday: Closed</li>
+            </ul>
+          </div>
+
+          <div class="contact-card bg-white">
+            <h5 class="h6">Key contacts</h5>
+            <dl class="row mb-0">
+              <dt class="col-5 small muted">Sales Manager</dt>
+              <dd class="col-7 mb-2">
+                Carlos Vega<br /><small class="muted">(555) 912-4831</small>
+              </dd>
+
+              <dt class="col-5 small muted">Finance</dt>
+              <dd class="col-7 mb-2">
+                Lauren Smith<br /><small class="muted"
+                  >finance@riverview-motors.example</small
+                >
+              </dd>
+
+              <dt class="col-5 small muted">Service</dt>
+              <dd class="col-7 mb-0">
+                Service Desk<br /><small class="muted">(555) 912-4899</small>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="text-center mt-3">
+            <small class="muted">Follow us:</small>
+            <div class="mt-1">
+              <a href="#" class="btn btn-outline-secondary btn-sm me-1"
+                >Facebook</a
+              >
+              <a href="#" class="btn btn-outline-secondary btn-sm me-1"
+                >Instagram</a
+              >
+              <a href="#" class="btn btn-outline-secondary btn-sm">Twitter</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="text-center mt-4 muted small">
+        © Riverview Motors — 1234 Bayside Drive, Riverside, CA • (555) 912-4830
+      </footer>
+    </div>
+  </div>
+  <script>
+    // Simple front-end handling for demo purposes
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        // Basic required check
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        if (!name || !email) {
+          alert("Please provide your name and email.");
+          return;
+        }
+        // Show success alert
+        var alertEl = document.getElementById("alert");
+        alertEl.classList.remove("d-none");
+        // reset form (simulate send)
+        this.reset();
+        // hide after a while
+        setTimeout(function () {
+          alertEl.classList.add("d-none");
+        }, 6000);
+      });
+  </script>
+</html>
