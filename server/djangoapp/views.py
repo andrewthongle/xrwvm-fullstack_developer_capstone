@@ -12,8 +12,8 @@ from .populate import initiate
 from .restapis import (
     get_request,
     analyze_review_sentiments,
-    add_review
-)  # noqa: F401
+    add_review  # noqa: F401
+)
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
