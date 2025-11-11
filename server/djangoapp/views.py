@@ -12,7 +12,7 @@ from .populate import initiate
 from .restapis import (
     get_request,
     analyze_review_sentiments,
-    add_review  # noqa: F401
+    post_review
 )
 
 # Get an instance of a logger
@@ -148,3 +148,16 @@ def get_dealer_reviews(request, dealer_id):
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
+
+
+def add_review(request):
+    if (request.user.is_anonymous is False):
+        data = json.loads(request.body)
+        try:
+            post_review(data)
+            return JsonResponse({"status": 200})
+        except BaseException:
+            return JsonResponse(
+                {"status": 401, "message": "Error in posting review"})
+    else:
+        return JsonResponse({"status": 403, "message": "Unauthorized"})
