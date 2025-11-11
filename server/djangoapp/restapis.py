@@ -2,8 +2,6 @@
 import requests
 import os
 from dotenv import load_dotenv
-import json
-from django.http import JsonResponse
 
 load_dotenv()
 
